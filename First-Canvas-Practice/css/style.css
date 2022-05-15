@@ -1,0 +1,256 @@
+html * {
+	font-family: Arial, 'Noto Sans', sans-serif;
+}
+
+body {
+	color: white;
+	background-color: black;
+}
+
+.btn {
+	margin: 0;
+	padding: 15px;
+	color: white;
+	border-color: white;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 7px;
+	background-color: rgba(255, 255, 255, 0.1);
+	font-size: 15pt;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	transition: color 0.3s ease-in-out,
+				background-color 0.1s ease-in-out,
+				box-shadow 0.05s ease-in-out;
+}
+
+.btn:hover {
+	cursor: pointer;
+	color: black;
+	background-color: white;
+}
+
+.btn:active {
+	box-shadow: 0 2px 35px rgba(255, 255, 255, 0.5);
+}
+
+canvas#myCanvas {
+	border-color: white;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: 2px;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+canvas#myCanvas:hover {
+	cursor: pointer;
+}
+
+input.form-control {
+	width: 100%;
+	height: 100%;
+	vertical-align: top;
+	border-style: solid;
+	border-color: #F0F0F0;
+	border-width: 1px;
+	border-radius: 5px;
+	display: inline-block;
+	transition: box-shadow 0.2s ease-in-out;
+}
+
+input.form-control:focus {
+	box-shadow: 0 0 25px rgba(0, 191, 255, 0.5);
+}
+
+.swatches .swatch-item {
+	margin: 0;
+	padding: 0;
+	width: 20px;
+	height: 20px;
+	border-width: 2px;
+	border-style: solid;
+	border-radius: 2px;
+	border-color: white;
+	display: inline-block;
+	transition: box-shadow 0.1s ease-in-out;
+}
+
+.swatches > .swatch-item:hover {
+	box-shadow: 0 0 35px rgba(255, 255, 255, 0.7);
+}
+
+.swatches > .current-color > .swatch-item {
+	width: 40px;
+	height: 40px;
+	transition: background-color 0.15s ease-in-out;
+}
+
+.swatches > .current-color > input {
+	height: 39px;
+	width: 108px;
+	font-size: 20px;
+	margin: 0;
+	padding: 5px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.swatches > .swatch-item:hover {
+	cursor: pointer;
+}
+
+.fixed-to-left {
+	position: fixed;
+	left: 0;
+}
+
+.fixed-to-right {
+	position: fixed;
+	right: 0;
+}
+
+.adjust-bar > .btn {
+	width: 30px;
+	height: 30px;
+	padding: 2px;
+}
+
+.adjust-bar > .form-control {
+	width: calc(100% - 72px);
+	height: 25px;
+	font-size: 12pt;
+}
+
+.adjust-bar > .header {
+	margin-bottom: 5px;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.tutorial {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border-style: solid;
+	border-width: 4px;
+	border-color: #0099CC;
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bolder;
+	line-height: 30px;
+	background-color: rgba(255, 255, 255, 0.1);
+	display: inline-block;
+	overflow: hidden;
+	z-index: 1031;
+	transition: background-color 0.2s ease-in-out,
+				color 0.2s ease-in-out,
+				width 0.2s ease-in-out,
+				height 0.2s ease-in-out;
+	display: none;
+}
+
+.tutorial:hover {
+	width: 800px;
+	height: 410px;
+	padding: 30px;
+	text-align: left;
+	color: #686868;
+	background-color: white;
+	border-radius: 5px;
+	border-width: 1px;
+}
+
+.tutorial:hover > .information {
+	display: none;
+}
+
+.tutorial .btn {
+	color: #0099CC;
+	border-color: #0099CC;
+	width: 100%;
+}
+
+.tutorial .btn:hover {
+	color: white;
+	background-color: #0099CC;
+}
+
+.tutorial .btn:active {
+	box-shadow: 0 2px 35px rgba(0, 153, 204, 0.5);
+}
+
+.tutorial hr {
+	border-color: #989898;
+	width: calc(100% - 20px);
+}
+
+ul.side-bar {
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	width: 210px;
+	height: 100%;
+	list-style-type: none;
+	background-color: #101010;
+	z-index: 1030;
+}
+
+ul.side-bar > li > .btn {
+	height: 50px;
+}
+
+ul.side-bar > hr {
+	width: 85%;
+	border-color: #585858;
+	box-shadow: 0 0 7px #585858;
+}
+
+ul.side-bar > li {
+	margin: 0;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+/*
+ul.side-bar > li:hover {
+	color: black;
+	background-color: white;
+	cursor: pointer;
+	transition: color 0.3s ease-in-out,
+				background-color 0.3s ease-in-out,
+				box-shadow 0.1s ease-in-out;
+}
+*/
+
+ul.side-bar > li.brand {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 15pt;
+	font-weight: bold;
+}
+
+ul.side-bar > li.brand:hover {
+	cursor: default;
+	color: white;
+	background-color: transparent;
+}
+
+ul.side-bar > li.swatches:hover {
+	color: white;
+	background-color: transparent;
+	cursor: default;
+}
+
+ul.side-bar > li > * {
+	width: 100%;
+}

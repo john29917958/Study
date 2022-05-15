@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "style-loader": "~0.12.3",
+    "css-loader": "~0.14.4",
+    "webpack": "~1.2.0-beta6",
+    "jshint": "~2.8.0"
+  }
+}

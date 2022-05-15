@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="utf-8">
+<head>
+  <title>Simple Painter</title>
+  <meta http-equiv="content-type" content="text/html"; charset="utf-8">
+  <meta name="author" content="John Wang">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <script src="javascripts/jquery-2.1.3.min.js" type="text/javascript"></script>
+  <script src="javascripts/main.js" type="text/javascript"></script>
+</head>
+  <body>
+    <div class="tutorial" data-type="color">
+      <div class="information">i</div>
+      I want to set the color which does not exist in the swatches, how can I change the color to the one I want? Don't worry, just look at the solutions provided below. It's pretty simple and easy!
+      <br>
+      <br>
+      1. Use color name. For example, input "red" to draw a line with the color of an apple.<br>
+      2. Use color hex number. For example, input "#7CFC00" for LawnGreen.<br>
+      3. Use the form "rgb(R, G, B)" to set the color by RGB color model. For example, input "rgb(255, 255, 255)" to draw a snow white line.<br>
+      4. Use "rgba(R, G, B, Opacity)" to set a more powerful color with opacity. For example, input "rgba(0, 153, 204, 0.5)" to draw glasses.
+      <br><br>
+      <div class="text-center">
+        <button type="button" class="btn btn-close">
+          Okay, I got it!
+        </button>
+      </div>
+    </div>
+    <h1 class="text-center">Draw line here</h1>
+    <ul class="side-bar fixed-to-right">
+      <li class="brand">Swatches</li>
+      <li class="swatches">
+        <div class="current-color">
+          <div class="swatch-item" data-color="lawngreen"></div>
+          <input class="form-control color-name" type="text" name="color" value="lawngreen">
+        </div>
+        <br>
+        <span class="swatch-item" data-color="red"></span>
+        <span class="swatch-item" data-color="yellow"></span>
+        <span class="swatch-item" data-color="lawngreen"></span>
+        <span class="swatch-item" data-color="cyan"></span>
+        <span class="swatch-item" data-color="blue"></span>
+        <span class="swatch-item" data-color="Fuchsia"></span>
+        <span class="swatch-item" data-color="white"></span>
+        <span class="swatch-item" data-color="lightgray"></span>
+        <span class="swatch-item" data-color="gray"></span>
+        <span class="swatch-item" data-color="#181818"></span>
+        <span class="swatch-item" data-color="black"></span>
+        <!--<span class="swatch-item" data-color="transparent">X</span>-->
+      </li>
+      <hr>
+      <li>
+        <div class="adjust-bar line-width-resizer">
+          <div class="header">Line width</div>
+          <button class="btn decrease" type="button">-</button>
+          <input class="form-control text-center" value="1px">
+          <button class="btn increase" type="button">+</button>
+        </div>
+      </li>
+      <li>
+        <div class="adjust-bar opacity-manager">
+          <div class="header">Line opacity</div>
+          <button class="btn decrease" type="button">-</button>
+          <input class="form-control text-center" value="100%">
+          <button class="btn increase" type="button">+</button>
+        </div>
+      </li>
+      <hr>
+      <li>
+        <button class="btn btn-clear" type="button">
+          Clear canvas
+        </button>
+      </li>
+    </ul>
+    <div class="text-center">
+      <canvas id="myCanvas" width="" height=""></canvas>
+    </div>
+    <br>
+    <br>
+    <div class="text-center">
+      <a class="btn" target="_blank" href="https://github.com/john29917958/First-Canvas-Practice">
+        Fork me on Github
+      </a>
+    </div>
+  </body>
+</html>
