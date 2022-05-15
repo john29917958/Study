@@ -1,8 +1,12 @@
 from enum import Flag, auto
 from struct import *
 from typing import Final
-import threading
 import time
+import threading
+import asyncio
+from multiprocessing import Pool
+from multiprocessing import Process
+import os
 
 # Primitive types
 
@@ -153,12 +157,12 @@ while var > 0:
     var -= 1
 
 # For loop
-print('=========== For loop ===========')
+print("=========== For loop ===========")
 for i in range(3, 5):
     print(i)
 
 # Try except
-print('=========== Try catch ===========')
+print("=========== Try catch ===========")
 try:
     print(no_such_var)
 except NameError as e:
@@ -187,7 +191,7 @@ func_pointer = func
 func_pointer(var)
 
 # Closure concept in JavaScript also exists in Python
-print('=========== Closure ===========')
+print("=========== Closure ===========")
 
 def func_outside():    
     num = None
@@ -204,7 +208,7 @@ func_outside()
 
 # Class
 
-print('=========== Class ===========')
+print("=========== Class ===========")
 
 class Animal:
     """
@@ -276,7 +280,7 @@ try:
     animal.__compose_description()
 except AttributeError as e:
     print("Unable to invoke private member - " + str(e))
-    print(dir(animal))
+    print(animal)
 else:
     print("This line of code should never be executed...")
 
@@ -316,14 +320,79 @@ iteratable = Iteratable(1, 2, 3, 4, 5)
 for num in iteratable:
     print(num)
 
-def print_after(message, seconds):
-    time.sleep(seconds)
-    print(message)
+# Coroutines and Tasks
+print("=========== Coroutines and Tasks ===========")
 
-thd = threading.Thread(target=print_after, args=("First thread", 1), daemon=True)
-thd2 = threading.Thread(target=print_after, args=("Second thread", 2), daemon=True)
-thd3 = threading.Thread(target=print_after, args=("Third thread", 3), daemon=True)
+async def async_task(sleep_seconds):
+    print('Async task started')
+    await asyncio.sleep(sleep_seconds)
+    print('Async task ended')
+
+async def async_task_main_entry():
+    task1 = asyncio.create_task(async_task(1))
+    task2 = asyncio.create_task(async_task(2))
+
+    await asyncio.gather(task1, task2)
+
+asyncio.run(async_task_main_entry())
+
+# Threading
+
+print("=========== Threading ===========")
+
+print_lock = threading.Lock()
+
+def print_after(message, cycle, stop):
+    time_last = 0
+
+    while (time_last <= stop):
+        print(threading.current_thread().name + ': Acquiring the lock')
+        print_lock.acquire()
+        print(threading.current_thread().name + ': Acquired the lock')
+        print(f"{threading.current_thread().name}: {message}")
+        print_lock.release()
+        print(threading.current_thread().name + ': Released the lock')
+
+        time.sleep(cycle)
+        time_last += cycle
+
+thd = threading.Thread(target=print_after, args=("First thread", 1, 5), daemon=True)
+thd2 = threading.Thread(target=print_after, args=("Second thread", 2, 5), daemon=True)
+thd3 = threading.Thread(target=print_after, args=("Third thread", 3, 5), daemon=True)
 thd.start()
 thd2.start()
 thd3.start()
+
+print(f'Active thread count: {threading.active_count()}')
+
 thd3.join()
+
+# Process
+
+print("=========== Process ===========")
+
+def long_running_data_collection_func(num):
+    result = 0
+    for i in range(num):
+        result += 1
+    return result
+
+# Assigns 5 workers
+with Pool(5) as p:
+    print(p.map(long_running_data_collection_func, [999, 9999, 99999999]))
+
+def long_running_data_collection_func(num):
+    result = 0
+    for i in range(num):
+        result += 1
+
+if __name__ == "__main__":    
+    p1 = Process(target=long_running_data_collection_func, args=(999,))
+    p2 = Process(target=long_running_data_collection_func, args=(9999,))
+    p3 = Process(target=long_running_data_collection_func, args=(99999999,))
+    print("Start processes...")
+    p1.start()
+    p2.start()
+    p3.start()
+    p3.join()
+    print("All processes ended")
