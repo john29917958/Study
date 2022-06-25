@@ -24,6 +24,8 @@ public class Study {
         System.out.println(String.format("Value of multi-line string \"str\" is: %s", str));
         System.out.println(String.format("Type of \"str\" is: %s", classType.getName()));
 
-
+        double precisedNumber = 0.1;
+        System.out.println(String.format("Value of \"precisedNumber\" is: %s", precisedNumber));
+        //System.out.println(String.format("Type of \"precisedNumber\" is: %s", classType.getName()));
     }
 }
