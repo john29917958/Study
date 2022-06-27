@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
 import static java.util.Map.entry;
@@ -47,5 +48,34 @@ public class Study {
             System.out.println(key + ": " + map.get(key));
         }
         System.out.println(String.format("Type of \"map\" is: %s", classType.getName()));
+
+        enum Colors {
+            Red {
+                @Override
+                public String toString() {
+                    return "RED";
+                }
+            },
+            Green {
+                @Override
+                public String toString() {
+                    return "GREEN";
+                }
+            },
+            Blue {
+                @Override
+                public String toString() {
+                    return "BLUE";
+                }
+            }
+        }        
+        System.out.println(String.format("All enum values of \"Colors\" is: %s", Arrays.toString(Colors.values())));
+        Colors color = Colors.Green;
+        System.out.println("Value of \"color\" is: " + color);
+        System.out.println("Does \"color\" equals Colors.Red: " + (color == Colors.Red));
+        System.out.println("Does \"color\" equals Colors.Green: " + (color == Colors.Green));
+        for (Colors info : EnumSet.allOf(Colors.class)) {            
+            String enumValue = info.name();
+        }
     }
 }
