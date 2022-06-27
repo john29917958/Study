@@ -71,11 +71,16 @@ public class Study {
         }        
         System.out.println(String.format("All enum values of \"Colors\" is: %s", Arrays.toString(Colors.values())));
         Colors color = Colors.Green;
+        classType = color.getClass();
         System.out.println("Value of \"color\" is: " + color);
         System.out.println("Does \"color\" equals Colors.Red: " + (color == Colors.Red));
         System.out.println("Does \"color\" equals Colors.Green: " + (color == Colors.Green));
-        for (Colors info : EnumSet.allOf(Colors.class)) {            
+        System.out.println(String.format("Type of \"color\" is: %s", classType));
+        for (Colors info : EnumSet.allOf(Colors.class)) {
             String enumValue = info.name();
         }
+
+        System.out.println(String.format("Type of \"classType\" is: %s", classType.getClass()));
+        System.out.println("Is \"color\" an instance of \"Colors\": " + (color instanceof Colors));
     }
 }
