@@ -123,5 +123,13 @@ public class Study {
         final int constInt = 10;
         // Compile error of modifying constant value: constInt = 20;
         System.out.println(String.format("Value of constant \"constInt\" is: %d", constInt));
+
+        System.out.println("=========== while loop (from 10 down to 1) ===========");
+        integer = 10;
+        while (integer > 0) {
+            System.out.println(String.format("While loop: %d", integer));
+            integer -= 1;
+        }
+
     }
 }
