@@ -1,10 +1,12 @@
+package com.study;
+import static java.util.Map.entry;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
-import static java.util.Map.entry;
-import java.util.ArrayList;
 
 public class Study {
     public static void main(String[] args) {
@@ -147,6 +149,10 @@ public class Study {
         System.out.println("=========== Function ===========");
         integer = add(10, 20);
         System.out.println(String.format("Return value of function add(10, 20) is: %d", integer));
+
+        System.out.println("=========== Class ===========");
+        Animal human = new Human("Allen", "Iverson", 100);
+        System.out.println(human);
     }
 
     private static int add(int a, int b) {
