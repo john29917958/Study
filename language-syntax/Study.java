@@ -118,9 +118,9 @@ public class Study {
         System.out.println("Is \"color\" an instance of \"Colors\": " + (color instanceof Colors));
 
         System.out.println("=========== final (namely constant) ===========");
-        final int constInt = 10;
-        // Compile error of modifying constant value: constInt = 20;
-        System.out.println(String.format("Value of constant \"constInt\" is: %d", constInt));
+        final int CONSTINT = 10;
+        // Compile error of modifying constant value: CONSTINT = 20;
+        System.out.println(String.format("Value of constant \"CONSTINT\" is: %d", CONSTINT));
 
         System.out.println("=========== while loop (from 10 down to 1) ===========");
         integer = 10;
