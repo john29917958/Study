@@ -131,5 +131,10 @@ public class Study {
             integer -= 1;
         }
 
+        System.out.println("=========== for loop (from 0 down to 9) ===========");
+        integer = 10;
+        for (int i = 0; i < integer; i++) {
+            System.out.println(String.format("for loop: %d", i));
+        }
     }
 }
