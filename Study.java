@@ -143,5 +143,13 @@ public class Study {
         } catch (Exception e) {
             System.out.println("Exception: " + e.getMessage());
         }
+
+        System.out.println("=========== Function ===========");
+        integer = add(10, 20);
+        System.out.println(String.format("Return value of function add(10, 20) is: %d", integer));
+    }
+
+    private static int add(int a, int b) {
+        return a + b;
     }
 }
