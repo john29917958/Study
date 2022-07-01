@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 import static java.util.Map.entry;
 
@@ -60,6 +61,17 @@ public class Study {
         arrList.clear();
         System.out.println(String.format("Length of \"arrayList\" after cleared is: %d", arrList.size()));
         System.out.println(String.format("Type of \"arrList\" is: %s", classType.getName()));
+
+        System.out.println("=========== LinkedList ===========");
+        LinkedList list = new LinkedList();
+        list.add("123");
+        list.add(321);
+        System.out.println("Values of \"list\" is:");
+        for (Object o : list) {
+            System.out.println(o.toString());
+        }
+
+        System.out.println("=========== HashMap ===========");
         Map<String, String> map = new HashMap<String, String>(Map.ofEntries(
             entry("title1", "Java"),
             entry("title2", "is")
