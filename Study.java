@@ -84,6 +84,7 @@ public class Study {
         }
         System.out.println(String.format("Type of \"map\" is: %s", classType.getName()));
 
+        System.out.println("=========== enum ===========");
         enum Colors {
             Red {
                 @Override
