@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import static java.util.Map.entry;
-
 import java.util.ArrayList;
 
 public class Study {
@@ -34,7 +33,7 @@ public class Study {
 
         double precisedNumber = 0.1;
         System.out.println(String.format("Value of \"precisedNumber\" is: %s", precisedNumber));
-        
+
         int[] arr = new int[] { 1, 2, 3, 4, 5, 6 };
         classType = arr.getClass();
         System.out.println("Values \"arr\" is: " + Arrays.toString(arr));
@@ -73,9 +72,8 @@ public class Study {
 
         System.out.println("=========== HashMap ===========");
         Map<String, String> map = new HashMap<String, String>(Map.ofEntries(
-            entry("title1", "Java"),
-            entry("title2", "is")
-        ));
+                entry("title1", "Java"),
+                entry("title2", "is")));
         map.put("title3", "awesome!");
         classType = map.getClass();
         System.out.println("Value of map is: ");
@@ -104,7 +102,7 @@ public class Study {
                     return "BLUE";
                 }
             }
-        }        
+        }
         System.out.println(String.format("All enum values of \"Colors\" is: %s", Arrays.toString(Colors.values())));
         Colors color = Colors.Green;
         classType = color.getClass();
@@ -140,11 +138,9 @@ public class Study {
         System.out.println("=========== Try catch (exception handling) ===========");
         try {
             throw new IllegalArgumentException("Invalid argument");
-        }        
-        catch (IllegalArgumentException e) {
-            System.out.println("IllegalArgumentException: " + e.getMessage());            
-        }
-        catch (Exception e) {
+        } catch (IllegalArgumentException e) {
+            System.out.println("IllegalArgumentException: " + e.getMessage());
+        } catch (Exception e) {
             System.out.println("Exception: " + e.getMessage());
         }
     }
