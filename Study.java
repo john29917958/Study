@@ -136,5 +136,16 @@ public class Study {
         for (int i = 0; i < integer; i++) {
             System.out.println(String.format("for loop: %d", i));
         }
+
+        System.out.println("=========== Try catch (exception handling) ===========");
+        try {
+            throw new IllegalArgumentException("Invalid argument");
+        }        
+        catch (IllegalArgumentException e) {
+            System.out.println("IllegalArgumentException: " + e.getMessage());            
+        }
+        catch (Exception e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
     }
 }
