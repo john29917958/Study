@@ -1,4 +1,5 @@
 package com.study;
+
 /**
  * Represents an animal.
  */
@@ -9,6 +10,7 @@ public abstract class Animal {
 
     /**
      * Creates an animal instance.
+     * 
      * @param name The name of animal
      * @param size The size of animal
      */
@@ -19,6 +21,7 @@ public abstract class Animal {
 
     /**
      * Gets the name of animal.
+     * 
      * @return Returns animal name.
      */
     public String getName() {
@@ -27,6 +30,7 @@ public abstract class Animal {
 
     /**
      * Sets the name of animal.
+     * 
      * @param name The new name of animal.
      */
     public void setName(String name) {
@@ -35,6 +39,7 @@ public abstract class Animal {
 
     /**
      * Gets the size of animal.
+     * 
      * @return Returns animal size.
      */
     public int getSize() {
@@ -43,6 +48,7 @@ public abstract class Animal {
 
     /**
      * Sets the size of animal.
+     * 
      * @param size The new size of animal.
      */
     public void setSize(int size) {
