@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import static java.util.Map.entry;
 
+import java.util.ArrayList;
+
 public class Study {
     public static void main(String[] args) {
         System.out.println("=========== Primitive types ===========");
@@ -37,6 +39,27 @@ public class Study {
         System.out.println("Values \"arr\" is: " + Arrays.toString(arr));
         System.out.println("Type of \"arr\" is: " + classType.getName());
 
+        System.out.println("=========== ArrayList ===========");
+
+        ArrayList<String> arrList = new ArrayList<String>();
+        classType = arrList.getClass();
+        arrList.add("1");
+        arrList.add("3");
+        arrList.add("2");
+        arrList.add(0, "0");
+        System.out.println("Values of \"arrList\" is: ");
+        for (String elem : arrList) {
+            System.out.println(elem);
+        }
+        System.out.println("Access the first value of arrList: \"" + arrList.get(0) + "\"");
+        arrList.remove(0);
+        System.out.println("Values of \"arrList\" after removing first element:");
+        for (int i = 0; i < arrList.size(); i++) {
+            System.out.println(arrList.get(i));
+        }
+        arrList.clear();
+        System.out.println(String.format("Length of \"arrayList\" after cleared is: %d", arrList.size()));
+        System.out.println(String.format("Type of \"arrList\" is: %s", classType.getName()));
         Map<String, String> map = new HashMap<String, String>(Map.ofEntries(
             entry("title1", "Java"),
             entry("title2", "is")
