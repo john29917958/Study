@@ -118,5 +118,10 @@ public class Study {
 
         System.out.println(String.format("Type of \"classType\" is: %s", classType.getClass()));
         System.out.println("Is \"color\" an instance of \"Colors\": " + (color instanceof Colors));
+
+        System.out.println("=========== final (namely constant) ===========");
+        final int constInt = 10;
+        // Compile error of modifying constant value: constInt = 20;
+        System.out.println(String.format("Value of constant \"constInt\" is: %d", constInt));
     }
 }
