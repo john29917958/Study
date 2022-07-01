@@ -154,6 +154,18 @@ public class Study {
         System.out.println("=========== Class ===========");
         Animal human = new Human("Allen", "Iverson", 100);
         System.out.println(human);
+
+        System.out.println("=========== Thread ===========");
+        Thread thread = new Thread(new Job(3));
+        thread.start();
+
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("End of program.");
     }
 
     private static int add(int a, int b) {
