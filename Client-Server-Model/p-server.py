@@ -1,11 +1,10 @@
-from concurrent.futures import thread
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import threading
 import time
 import requests
 
-hostName = "localhost"
-serverPort = 8080
+host_name = "localhost"
+server_port = 8080
 
 class Server(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -16,19 +15,19 @@ class Server(BaseHTTPRequestHandler):
             "response": "Res"
         }""", "utf-8"))
 
-def runServer():
-    webServer = HTTPServer((hostName, serverPort), Server)
-    print(f"Server started http://{hostName}:{serverPort}")
+def run_server():
+    web_server = HTTPServer((host_name, server_port), Server)
+    print(f"Server started http://{host_name}:{server_port}")
     
     try:
-        webServer.serve_forever()
+        web_server.serve_forever()
     except KeyboardInterrupt:
         pass
 
-    webServer.server_close()
+    web_server.server_close()
     print("Server stopped.")        
 
-def runTask():
+def run_task():
     print("Task started")
     while True:
         time.sleep(1)
@@ -37,8 +36,8 @@ def runTask():
         print(f"Name: {data['name']}, response: {data['response']}")
 
 if __name__ == "__main__":    
-    serverThread = threading.Thread(target=runServer, daemon=False)
-    taskThread = threading.Thread(target=runTask, daemon=True)
+    serverThread = threading.Thread(target=run_server, daemon=False)
+    taskThread = threading.Thread(target=run_task, daemon=True)
     serverThread.start()
     taskThread.start()
     
