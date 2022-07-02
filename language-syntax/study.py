@@ -135,8 +135,8 @@ print(type(range(1, len(var))))
 A_CONSTANT_VAL: Final[int] = 10
 print(A_CONSTANT_VAL)
 
-A_CONSTANT_VAL = 100
-print(A_CONSTANT_VAL)
+# A_CONSTANT_VAL = 100 => Compile error
+# print(A_CONSTANT_VAL)
 
 # Comments
 # Python ignore string literals not assigned to any variable.
@@ -320,6 +320,7 @@ def print_after(message, seconds):
     time.sleep(seconds)
     print(message)
 
+# deamon=true set it as a background thread and the thread is forced to end once main thread exits.
 thd = threading.Thread(target=print_after, args=("First thread", 1), daemon=True)
 thd2 = threading.Thread(target=print_after, args=("Second thread", 2), daemon=True)
 thd3 = threading.Thread(target=print_after, args=("Third thread", 3), daemon=True)
