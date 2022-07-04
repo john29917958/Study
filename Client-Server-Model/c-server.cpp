@@ -17,7 +17,8 @@ void error(const char *msg)
     exit(1);
 }
 
-void run_server(int port) {
+void run_server(int port)
+{
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     if (sockfd < 0)
     {
@@ -59,8 +60,8 @@ void run_server(int port) {
         }
 
         std::cout << "got connection from " << inet_ntoa(cli_addr.sin_addr)
-            << " at port " << ntohs(cli_addr.sin_port)
-            << ": " << buffer << std::endl;
+                  << " at port " << ntohs(cli_addr.sin_port)
+                  << ": " << buffer << std::endl;
         std::cout << "Press any key to leave C++ socket server..." << std::endl;
     }
 
