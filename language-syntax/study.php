@@ -90,4 +90,35 @@ foreach ($var as $key => $value) {
 }
 echo "\n";
 
+class Animal {
+    protected $name;
+    protected $size;
+
+    function __construct($name, $size) {
+        $this->name = $name;
+        $this->size = $size;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getSize() {
+        return $this->size;
+    }
+
+    public function setSize($size) {
+        $this->size = $size;
+    }
+}
+
+$animal = new Animal("It's an animal", 10);
+echo("name of animal: {$animal->getName()}\n");
+$animal->setName("This is an animal");
+echo("name of animal after setting it: {$animal->getName()}\n");
+
 ?>
