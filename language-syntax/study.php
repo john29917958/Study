@@ -114,11 +114,32 @@ class Animal {
     public function setSize($size) {
         $this->size = $size;
     }
+
+    public function getInfo() {
+        return "It's {$this->name}. My size is: {$this->size}\n";
+    }
 }
 
 $animal = new Animal("It's an animal", 10);
 echo("name of animal: {$animal->getName()}\n");
 $animal->setName("This is an animal");
 echo("name of animal after setting it: {$animal->getName()}\n");
+echo($animal->getInfo());
+
+class Human extends Animal {
+    private $lastName;
+
+    function __construct($firstName, $lastName, $size) {
+        parent::__construct($firstName, $size);
+        $this->lastName = $lastName;
+    }
+
+    public function getInfo() {
+        return "It's {$this->name}, {$this->lastName}. My size is: {$this->size}\n";
+    }
+}
+
+$animal = new Human("Allen", "Iverson", 50);
+echo $animal->getInfo();
 
 ?>
